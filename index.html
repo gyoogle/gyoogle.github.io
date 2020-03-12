@@ -2,25 +2,41 @@
 <html>
 <head>
   <title>Gyoogle</title>
-  <link rel="shortcut icon" href="/images/favicon.ico">
 </head>
 <body>
   <div class="center">
     <h1>
       <span class="words blue">G</span>
-      <span class="words green">y</span>
+      <span class="words green" id="y">y</span>
       <span class="words red">o</span>
       <span class="words yellow">o</span>
       <span class="words blue">g</span>
       <span class="words green">l</span>
       <span class="words red">e</span>
     </h1>
-    <a class="btn" href="https://gyoogle.dev/blog/">Enter</a>
+    <div class="bottom" onclick="location.href='https://gyoogle.dev/blog'">
+      <input type="text" class="input-form" placeholder="🔍" disabled/> 
+    </div>
+    <a class="btn" href="https://gyoogle.dev/blog">Enter</a>
   </div>
 </body>
 <style>
+
+#y { 
+  animation-name: ym;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  font-size: 0;
+}
+
+@keyframes ym {0% {font-size: 0; opacity:0;} 30% {display: none; opacity:0;} 100% {display: block; font-size: 7rem; opacity:1;}}
+@-webkit-keyframes ym { 0% {font-size: 0; opacity:0;} 30% {display: none; opacity:0;} 100% {display: block; font-size: 7rem; opacity:1;}}
+
+
 html {
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -33,13 +49,29 @@ body {
   font-smoothing: antialiased;
 }
 
+.input-form {
+  margin : 0px auto;
+  display: block;
+  width: 400px;
+  height: 30px;
+  border-radius: 50px;
+  border : 1px solid #bdbdbd;
+  font-size: 20pt;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.bottom {
+  margin-top : 150px!important;
+  clear : both;
+}
+
 .words {
   float: left;
 }
 
 .red {
   color : #f44336;
-  display: inline;
 }
 
 .blue {
@@ -55,6 +87,8 @@ body {
 }
 
 h1 {
+  text-align:justify;
+  width: 100%;
   margin: 0px;
   line-height: .95;
   font-weight: 600;
@@ -80,8 +114,7 @@ h1 {
 }
 
 .btn {
-  margin-top : 300px!important;
-  clear:both;
+  margin-top : 200px!important;
   display: block;
   margin: 0 auto;
   width: 170px;
